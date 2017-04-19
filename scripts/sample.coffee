@@ -19,16 +19,16 @@
 
 
 
-HubotSlack = require 'hubot-slack'
+# HubotSlack = require 'hubot-slack'
+
+
+# module.exports = (robot) ->
+#   robot.listeners.push new HubotSlack.SlackBotListener robot, /post|patch|put|briefings|extentions|proposals/i, (res) ->
+#     res.send "@here 重大なエラーが発生している可能性があります。"
 
 
 module.exports = (robot) ->
-  robot.listeners.push new HubotSlack.SlackBotListener robot, /post|patch|put|briefings|extentions|proposals/i, (res) ->
-    res.send "@here 重大なエラーが発生している可能性があります"
-
-
-module.exports = (robot) ->
-  robot.hear /post|patch|put|briefings|extentions|proposals/i, (msg) ->
+  robot.hear /post <|patch <|put <|briefings#|extentions#|proposals#/i, (msg) ->
     msg.send "@here 重大なエラーが発生している可能性があります"
 
 
