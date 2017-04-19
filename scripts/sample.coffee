@@ -31,12 +31,12 @@ for keyword, i in keywords
     robot.hear /#{keyword}/i, (msg) ->
       msg.send "@daisuke.nishimori おつかれさま！"
 
-module.exports = (robot) ->
-  robot.listeners.push new HubotSlack.SlackBotListener robot, /POST|PATCH|proposals|extentions|briefings/i, (res) ->
-    res.send "@daisuke.nishimori 【テスト中】ヤバめのエラーだよ"
+# module.exports = (robot) ->
+#   robot.listeners.push new HubotSlack.SlackBotListener robot, /POST|PATCH|proposals|extentions|briefings/i, (res) ->
+#     res.send "@daisuke.nishimori 【テスト中】ヤバめのエラーだよ"
 
-module.exports = (robot) ->
-  robot.hear /|POST|PATCH|proposals|extentions|briefings|/i, (msg) ->
-    msg.send "@daisuke.nishimori おつかれさま！"
+# module.exports = (robot) ->
+#   robot.hear /|POST|PATCH|proposals|extentions|briefings|/i, (msg) ->
+#     msg.send "@daisuke.nishimori おつかれさま！"
 
 
