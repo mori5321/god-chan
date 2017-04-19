@@ -26,3 +26,8 @@ module.exports = (robot) ->
 
   robot.hear /おはよう/i, (msg) ->
     msg.send "おつかれさま！"
+
+HubotSlack = require 'hubot-slack'
+module.exports = (robot) ->
+  robot.listeners.push new HubotSlack.SlackBotListener robot, /proposal/i, (res) ->
+    res.send "@daisuke.nishimori ヤバめのエラーだよ"
