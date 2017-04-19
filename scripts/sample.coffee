@@ -18,17 +18,17 @@
 #   <github username of the original script author>
 
 
-keywords = [/POST/, /PATCH/, /proposals/, /briefings/, /extentions/]
+keywords = [/POST/i, /PATCH/i, /proposals/i, /briefings/i, /extentions/i]
 
 HubotSlack = require 'hubot-slack'
 
 for keyword, i in keywords
   module.exports = (robot) ->
-    robot.listeners.push new HubotSlack.SlackBotListener robot, /#keyword/i, (res) ->
+    robot.listeners.push new HubotSlack.SlackBotListener robot, keyword, (res) ->
       res.send "@daisuke.nishimori 【テスト中】ヤバめのエラーだよ"
 
   module.exports = (robot) ->
-    robot.hear /#{keyword}/i, (msg) ->
+    robot.hear keyword, (msg) ->
       msg.send "@daisuke.nishimori おつかれさま！"
 
 # module.exports = (robot) ->
