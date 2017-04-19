@@ -34,5 +34,5 @@ module.exports = (robot) ->
 
 module.exports = (robot) ->
   robot.hear /proposals/i, (msg) ->
-    msg.send "おつかれさま！"
+    msg.send "@daisuke.nishimori おつかれさま！"
 
