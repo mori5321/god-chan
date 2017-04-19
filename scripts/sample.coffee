@@ -27,10 +27,8 @@ module.exports = (robot) ->
     res.send "@daisuke.nishimori 【テスト中】ヤバめのエラーだよ"
 
 
-
-
 module.exports = (robot) ->
-  robot.hear /proposals/i, (msg) ->
+  robot.hear /proposals|POST/i, (msg) ->
     msg.send "@daisuke.nishimori おつかれさま！"
 
 
