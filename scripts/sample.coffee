@@ -17,15 +17,6 @@
 # Author:
 #   <github username of the original script author>
 
-module.exports = (robot) ->
-
-  robot.respond /おはよう/i, (msg) ->
-    msg.send "おはようございます！"
-
-module.exports = (robot) ->
-
-  robot.hear /おはよう/i, (msg) ->
-    msg.send "おつかれさま！"
 
 HubotSlack = require 'hubot-slack'
 module.exports = (robot) ->
