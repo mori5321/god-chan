@@ -18,12 +18,16 @@
 #   <github username of the original script author>
 
 
+# keywords = ['POST', 'PATCH', 'proposals', 'briefings', 'extentions']
+
+
 HubotSlack = require 'hubot-slack'
 module.exports = (robot) ->
-  robot.listeners.push new HubotSlack.SlackBotListener robot, /proposals/i, (res) ->
-    res.send "@daisuke.nishimori ヤバめのエラーだよ"
+  robot.listeners.push new HubotSlack.SlackBotListener robot, /POST|PATCH|proposals|extentions|briefings/i, (res) ->
+    res.send "@daisuke.nishimori 【テスト中】ヤバめのエラーだよ"
 
 module.exports = (robot) ->
-  robot.hear /proposals/i, (msg) ->
+  robot.hear /|POST|PATCH|proposals|extentions|briefings|/i, (msg) ->
     msg.send "@daisuke.nishimori おつかれさま！"
+
 
