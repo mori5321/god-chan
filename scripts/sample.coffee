@@ -29,5 +29,10 @@ module.exports = (robot) ->
 
 HubotSlack = require 'hubot-slack'
 module.exports = (robot) ->
-  robot.listeners.push new HubotSlack.SlackBotListener robot, /proposal/i, (res) ->
+  robot.listeners.push new HubotSlack.SlackBotListener robot, /proposals/i, (res) ->
     res.send "@daisuke.nishimori ヤバめのエラーだよ"
+
+module.exports = (robot) ->
+  robot.hear /proposals/i, (msg) ->
+    msg.send "おつかれさま！"
+
